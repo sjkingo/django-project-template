@@ -134,7 +134,7 @@ LOGGING = {
 # Django-debug-toolbar settings.
 INTERNAL_IPS = ('127.0.0.1',)
 DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': True,
+    'INTERCEPT_REDIRECTS': False,
 }
 
 # Try and import the local_settings
