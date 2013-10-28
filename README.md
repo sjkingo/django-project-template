@@ -20,11 +20,11 @@ Installation
 1. Create a new virtualenv and activate it.
 2. Install the requirements:
 
-       $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/project_template/requirements.txt
+        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/project_template/requirements.txt
 
 3. Create a new project using the template:
 
-       $ PROJECT_NAME=foo
-       $ django-admin.py startproject --template https://github.com/sjkingo/django-project-template/archive/master.zip $PROJECT_NAME
+        $ export PROJECT_NAME=foo
+        $ django-admin.py startproject --template https://github.com/sjkingo/django-project-template/archive/master.zip $PROJECT_NAME
 
 It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template).
