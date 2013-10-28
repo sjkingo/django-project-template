@@ -27,4 +27,10 @@ Installation
         $ export PROJECT_NAME=foo
         $ django-admin.py startproject --template https://github.com/sjkingo/django-project-template/archive/master.zip $PROJECT_NAME
 
+4. Run the following to clean up the template directory and update `requirements.txt`:
+
+        $ cd $PROJECT_NAME
+        $ pip freeze > requirements.txt
+        $ rm -f README.md
+
 It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template).
