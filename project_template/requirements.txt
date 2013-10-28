@@ -1,0 +1,4 @@
+Django==1.5
+South
+django-debug-toolbar
+django-grappelli
