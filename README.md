@@ -32,5 +32,6 @@ Installation
         $ cd $PROJECT_NAME
         $ pip freeze > requirements.txt
         $ rm -f README.md
+        $ chmod +x manage.py
 
 It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template).
