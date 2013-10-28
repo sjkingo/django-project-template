@@ -20,7 +20,7 @@ Installation
 1. Create a new virtualenv and activate it.
 2. Install the requirements:
 
-        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/project_template/requirements.txt
+        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements.txt
 
 3. Create a new project using the template:
 
