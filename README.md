@@ -17,6 +17,10 @@ This Django project template sets up a new project with the following features:
 Installation
 ------------
 
+Note: This will install the latest stable version of Django (at the time of writing, 1.6). If this is undesirable,
+manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
+and edit accordingly.
+
 1. Create a new virtualenv and activate it.
 2. Install the requirements:
 
