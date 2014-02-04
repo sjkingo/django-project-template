@@ -13,6 +13,7 @@ This Django project template sets up a new project with the following features:
   * South
   * django-debug-toolbar
   * django-grappelli
+* Flat project structure (no sub-directory called `project_name`).
 
 Installation
 ------------
