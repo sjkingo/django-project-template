@@ -1,6 +1,9 @@
 Sam's Django Project Template
 =============================
 
+**Note:** The master branch contains a template for Django 1.7. If you wish to use Django 1.6, please
+check out the [django-1.6 branch](https://github.com/sjkingo/django-project-template/tree/django-1.6).
+
 This Django project template sets up a new project with the following features:
 
 * PostgreSQL for database connections.
@@ -10,7 +13,6 @@ This Django project template sets up a new project with the following features:
   version control without exposing passwords or keys.
 * Enables the admin interface with the [Grappelli skin](https://github.com/sehmaschine/django-grappelli).
 * Enables the following apps by default:
-  * South
   * django-debug-toolbar
   * django-grappelli
 * Flat project structure (no sub-directory called `project_name`).
@@ -18,7 +20,7 @@ This Django project template sets up a new project with the following features:
 Installation
 ------------
 
-Note: This will install the latest stable version of Django (at the time of writing, 1.6). If this is undesirable,
+Note: This will install the latest stable version of Django (at the time of writing, 1.7). If this is undesirable,
 manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
@@ -39,4 +41,4 @@ and edit accordingly.
         $ rm -f README.md
         $ chmod +x manage.py
 
-It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template).
+It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template) and modified for Django 1.7.

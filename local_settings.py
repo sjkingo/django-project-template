@@ -1,4 +1,6 @@
-# Django local site-specific settings for {{ project_name }} project.
+"""
+Django local site-specific settings for {{ project_name }} project.
+"""
 
 DEBUG = True
 
@@ -6,6 +8,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+
+# See https://docs.djangoproject.com/en/1.7/ref/settings/#databases for details.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

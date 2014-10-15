@@ -1,5 +1,4 @@
 Django
-South
 django-debug-toolbar
 django-grappelli
 psycopg2
