@@ -16,6 +16,7 @@ This Django project template sets up a new project with the following features:
   * django-debug-toolbar
   * django-grappelli
 * Flat project structure (no sub-directory called `project_name`).
+* Serves static and media files when using the development server.
 
 Installation
 ------------
