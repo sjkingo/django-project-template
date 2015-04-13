@@ -2,6 +2,9 @@
 Django settings for {{ project_name }} project.
 
 Local site-specific settings can be found in local_settings.py
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 import os
