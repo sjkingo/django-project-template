@@ -9,7 +9,7 @@ ADMINS = (
 )
 
 
-# See https://docs.djangoproject.com/en/1.7/ref/settings/#databases for details.
+# See https://docs.djangoproject.com/en/1.8/ref/settings/#databases for details.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -19,10 +19,11 @@ DATABASES = {
         'HOST': '',     # leave blank
         'PORT': '',     # leave blank
     }
+
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+# See https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts
 # If DEBUG is True, localhost will automatically be added to this list.
 ALLOWED_HOSTS = []
 
