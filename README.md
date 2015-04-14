@@ -19,18 +19,18 @@ Installation
 ------------
 
 Note: This will install the latest stable version of Django (at the time of writing, 1.6). If this is undesirable,
-manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
+manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/django-1.6/requirements.txt)
 and edit accordingly.
 
 1. Create a new virtualenv and activate it.
 2. Install the requirements:
 
-        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements.txt
+        $ pip install -r https://raw.github.com/sjkingo/django-project-template/django-1.6/requirements.txt
 
 3. Create a new project using the template:
 
         $ export PROJECT_NAME=foo
-        $ django-admin.py startproject --template https://github.com/sjkingo/django-project-template/archive/master.zip $PROJECT_NAME
+        $ django-admin.py startproject --template https://github.com/sjkingo/django-project-template/archive/1.6.zip $PROJECT_NAME
 
 4. Run the following to clean up the template directory and update `requirements.txt`:
 
