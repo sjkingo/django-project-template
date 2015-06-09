@@ -32,6 +32,7 @@ and edit accordingly.
 2. Install the requirements:
 
         $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements.txt
+        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements-dev.txt
 
 3. Create a new project using the template:
 
