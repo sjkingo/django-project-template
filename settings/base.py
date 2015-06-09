@@ -1,7 +1,8 @@
 """
-Django settings for {{ project_name }} project.
+Django base settings for {{ project_name }} project.
 
-Local site-specific settings can be found in local_settings.py
+Local site-specific settings can be found in settings/dev.py and
+settings/prod.py.
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
@@ -59,9 +60,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
+# Top level urlconf for this project.
 ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -75,7 +76,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'grappelli',
     'django.contrib.admin',
-    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -107,18 +107,14 @@ LOGGING = {
     }
 }
 
-# Django-debug-toolbar settings.
-INTERNAL_IPS = ('127.0.0.1',)
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
+# Database settings. We define this here so it can be used for both dev and prod
+# configurations. Add HOST and PORT if the database is not local.
+# See https://docs.djangoproject.com/en/1.8/ref/settings/#databases for details.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+    }
 }
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-# Try and import the local_settings
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
-TEMPLATE_DEBUG = DEBUG
-MANAGERS = ADMINS

@@ -12,8 +12,8 @@ This Django project template sets up a new project with the following features:
 * PostgreSQL for database connections.
 * Sensible time zone and defaults for Brisbane, Australia.
   * Note that internationalization and time zone-aware datetimes are disabled!
-* `local_settings.py` file to store site-specific settings. This allows `settings.py` to be committed to
-  version control without exposing passwords or keys.
+* `settings` app to store site-specific settings by providing `settings/dev.py` and `settings/prod.py`
+  files.
 * Enables the admin interface with the [Grappelli skin](https://github.com/sehmaschine/django-grappelli).
 * Enables the following apps by default:
   * django-debug-toolbar
@@ -44,5 +44,9 @@ and edit accordingly.
         $ pip freeze > requirements.txt
         $ rm -f README.md
         $ chmod +x manage.py
+
+5. By default, `settings.dev` is used in `manage.py`. To switch to the production settings, set the environment variable `DJANGO_SETTINGS_MODULE`:
+
+        $ DJANGO_SETTINGS_MODULE=settings.prod ./manage.py ...
 
 It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template) and modified for Django 1.8.
