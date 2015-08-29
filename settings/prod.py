@@ -2,7 +2,7 @@
 Django production settings for {{ project_name }} project.
 """
 
-from base import *
+from .base import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
