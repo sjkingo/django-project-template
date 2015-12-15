@@ -7,9 +7,9 @@ from .base import *
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
+ADMINS = [
     # ('Your Name', 'your_email@example.com'),
-)
+]
 
 # Hosts/domain names that are valid for this site.
 # See https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts
