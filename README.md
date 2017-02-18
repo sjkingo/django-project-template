@@ -1,5 +1,4 @@
-Sam's Django Project Template
-=============================
+# Sam's Django Project Template
 
 **Note:** The master branch contains a template for Django 1.10. If you wish to use a previous version, please
 check out the appropriate branch:
@@ -8,6 +7,8 @@ check out the appropriate branch:
 * [django-1.8 branch](https://github.com/sjkingo/django-project-template/tree/django-1.8)
 * [django-1.7 branch](https://github.com/sjkingo/django-project-template/tree/django-1.7)
 * [django-1.6 branch](https://github.com/sjkingo/django-project-template/tree/django-1.6)
+
+## Features
 
 This Django project template sets up a new project with the following features:
 
@@ -24,8 +25,7 @@ This Django project template sets up a new project with the following features:
 * Serves static and media files when using the development server.
 * Password validation is enabled for Django's auth system.
 
-Installation
-------------
+## Installation
 
 Note: This will install the latest stable version of Django (at the time of writing, 1.10.5). If this is undesirable,
 manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
