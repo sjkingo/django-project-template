@@ -1,9 +1,10 @@
 Sam's Django Project Template
 =============================
 
-**Note:** The master branch contains a template for Django 1.9. If you wish to use a previous version, please
+**Note:** The master branch contains a template for Django 1.10. If you wish to use a previous version, please
 check out the appropriate branch:
 
+* [django-1.9 branch](https://github.com/sjkingo/django-project-template/tree/django-1.9)
 * [django-1.8 branch](https://github.com/sjkingo/django-project-template/tree/django-1.8)
 * [django-1.7 branch](https://github.com/sjkingo/django-project-template/tree/django-1.7)
 * [django-1.6 branch](https://github.com/sjkingo/django-project-template/tree/django-1.6)
@@ -12,7 +13,7 @@ This Django project template sets up a new project with the following features:
 
 * PostgreSQL for database connections.
 * Sensible time zone and defaults for Brisbane, Australia.
-  * Note that internationalization and time zone-aware datetimes are disabled!
+  * Note that internationalization is disabled!
 * `settings` app to store site-specific settings by providing `settings/dev.py` and `settings/prod.py`
   files.
 * Enables the admin interface with the [Grappelli skin](https://github.com/sehmaschine/django-grappelli).
@@ -21,12 +22,12 @@ This Django project template sets up a new project with the following features:
   * django-grappelli
 * Flat project structure (no sub-directory called `project_name`).
 * Serves static and media files when using the development server.
-* Uses default Django template configuration.
+* Password validation is enabled for Django's auth system.
 
 Installation
 ------------
 
-Note: This will install the latest stable version of Django (at the time of writing, 1.9). If this is undesirable,
+Note: This will install the latest stable version of Django (at the time of writing, 1.10.5). If this is undesirable,
 manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
@@ -52,4 +53,4 @@ and edit accordingly.
 
         $ DJANGO_SETTINGS_MODULE=settings.prod ./manage.py ...
 
-It is based on the `project_template` shipped with [`stable/1.5.x`](https://github.com/django/django/tree/stable/1.5.x/django/conf/project_template) and modified for Django 1.9.
+It is based on the `project_template` shipped with [`stable/1.10`](https://github.com/django/django/tree/stable/1.10.x/django/conf/project_template).

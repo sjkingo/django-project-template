@@ -5,7 +5,7 @@ Local site-specific settings can be found in settings/dev.py and
 settings/prod.py.
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.9/ref/settings/
+https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
@@ -21,6 +21,11 @@ TIME_ZONE = 'Australia/Brisbane'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-AU'
 
+# Restrict selectable list of languages to English
+LANGUAGES = [
+    ('en', 'English'),
+]
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = False
@@ -30,7 +35,7 @@ USE_I18N = False
 USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = False
+USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
@@ -51,13 +56,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+# Whether a user's session cookie expires when the Web browser is closed.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# See https://docs.djangoproject.com/en/1.10/ref/settings/#file-upload-permissions
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+# List of middleware classes to use. Order is important; in the request phase,
+# these middleware classes will be applied in the order given, and in the
+# response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -109,7 +122,7 @@ LOGGING = {
 
 # Database settings. We define this here so it can be used for both dev and prod
 # configurations. Add HOST and PORT if the database is not local.
-# See https://docs.djangoproject.com/en/1.9/ref/settings/#databases for details.
+# See https://docs.djangoproject.com/en/1.10/ref/settings/#databases for details.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -121,7 +134,7 @@ DATABASES = {
 
 # Template settings. Define the defaults here since we will probably need to
 # add to context_processors later.
-# See https://docs.djangoproject.com/en/1.9/ref/templates/upgrading/#the-templates-settings
+# See https://docs.djangoproject.com/en/1.10/ref/templates/upgrading/#the-templates-settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -135,5 +148,25 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+    },
+]
+
+# Password validation
+# https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 8,
+        }
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
