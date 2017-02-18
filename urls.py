@@ -2,14 +2,12 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-import grappelli
-
 urlpatterns = [
     # Examples:
     # url(r'^$', 'app.views.home', name='home'),
     # url(r'^another_app/', include('another_app.urls')),
 
-    url(r'^grappelli/', include(grappelli.urls)),
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
