@@ -1,8 +1,9 @@
 # Sam's Django Project Template
 
-**Note:** The master branch contains a template for Django 1.10. If you wish to use a previous version, please
+**Note:** The master branch contains a template for Django 2.0. If you wish to use a previous version, please
 check out the appropriate branch:
 
+* [django-1.10 branch](https://github.com/sjkingo/django-project-template/tree/django-1.10)
 * [django-1.9 branch](https://github.com/sjkingo/django-project-template/tree/django-1.9)
 * [django-1.8 branch](https://github.com/sjkingo/django-project-template/tree/django-1.8)
 * [django-1.7 branch](https://github.com/sjkingo/django-project-template/tree/django-1.7)
@@ -17,17 +18,14 @@ This Django project template sets up a new project with the following features:
   * Note that internationalization is disabled!
 * `settings` app to store site-specific settings by providing `settings/dev.py` and `settings/prod.py`
   files.
-* Enables the admin interface with the [Grappelli skin](https://github.com/sehmaschine/django-grappelli).
-* Enables the following apps by default:
-  * django-debug-toolbar
-  * django-grappelli
+* Enables the [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar) app for development
 * Flat project structure (no sub-directory called `project_name`).
 * Serves static and media files when using the development server.
 * Password validation is enabled for Django's auth system.
 
 ## Installation
 
-Note: This will install the latest stable version of Django (at the time of writing, 1.10.5). If this is undesirable,
+Note: This will install the latest stable version of Django (at the time of writing, 2.0). If this is undesirable,
 manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
@@ -35,7 +33,6 @@ and edit accordingly.
 2. Install the requirements:
 
         $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements.txt
-        $ pip install -r https://raw.github.com/sjkingo/django-project-template/master/requirements-dev.txt
 
 3. Create a new project using the template:
 
@@ -53,4 +50,4 @@ and edit accordingly.
 
         $ DJANGO_SETTINGS_MODULE=settings.prod ./manage.py ...
 
-It is based on the `project_template` shipped with [`stable/1.10`](https://github.com/django/django/tree/stable/1.10.x/django/conf/project_template).
+It is based on the `project_template` shipped with [`stable/2.0`](https://github.com/django/django/tree/stable/2.0.x/django/conf/project_template).

@@ -1,21 +1,28 @@
+"""
+urlconf for {{ project_name }} project.
+
+For more information and examples, see 
+https://docs.djangoproject.com/en/2.0/topics/http/urls/#example
+"""
+
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, re_path, path
+
 from django.contrib import admin
 
 urlpatterns = [
     # Examples:
-    # url(r'^$', 'app.views.home', name='home'),
-    # url(r'^another_app/', include('another_app.urls')),
+    # path('', app.views.homepage, name='home'),
+    # path('post/<int:id>/', app.views.view_post, name='view_post'),
+    # re_path('articles/(?P<year>[0-9]{4})/', app.views.year_archive),
 
-    url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
     if 'debug_toolbar' in settings.INSTALLED_APPS:
-        import debug_toolbar
         urlpatterns.append(
-            url(r'^__debug__/', include(debug_toolbar.urls)),
+            path('__debug__/', include('debug_toolbar.toolbar', namespace='djdt')),
         )
 
     # Serve media files in development. Note Django automatically serves

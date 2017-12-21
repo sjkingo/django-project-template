@@ -5,7 +5,7 @@ Local site-specific settings can be found in settings/dev.py and
 settings/prod.py.
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.10/ref/settings/
+https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
@@ -85,13 +85,12 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 INSTALLED_APPS = [
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'grappelli',
-    'django.contrib.admin',
 ]
 
 # A sample logging configuration. The only tangible logging
