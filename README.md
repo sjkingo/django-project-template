@@ -13,11 +13,9 @@ check out the appropriate branch:
 
 This Django project template sets up a new project with the following features:
 
-* PostgreSQL for database connections.
+* PostgreSQL for database connections (using `pyscopg2-binary`).
 * Sensible time zone and defaults for Brisbane, Australia.
-  * Note that internationalization is disabled!
-* `settings` app to store site-specific settings by providing `settings/dev.py` and `settings/prod.py`
-  files.
+* `django-environ` for settings with site-specific settings picked up in a `.env` file
 * Enables the [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar) app for development
 * Flat project structure (no sub-directory called `project_name`).
 * Serves static and media files when using the development server.
@@ -25,7 +23,7 @@ This Django project template sets up a new project with the following features:
 
 ## Installation
 
-Note: This will install the latest stable version of Django (at the time of writing, 2.0). If this is undesirable,
+Note: This will install the latest stable version of Django (at the time of writing, 2.0.X). If this is undesirable,
 manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
@@ -46,8 +44,11 @@ and edit accordingly.
         $ rm -f README.md
         $ chmod +x manage.py
 
-5. By default, `settings.dev` is used in `manage.py`. To switch to the production settings, set the environment variable `DJANGO_SETTINGS_MODULE`:
+5. Create a `$PROJECT_NAME/.env` file in with the following:
 
-        $ DJANGO_SETTINGS_MODULE=settings.prod ./manage.py ...
+        DEBUG=True
+        SECRET_KEY=<secret_key_here>
+        DATABASE_URL=psql://<user>[:<pass>]@[<host>]/<db>
 
 It is based on the `project_template` shipped with [`stable/2.0`](https://github.com/django/django/tree/stable/2.0.x/django/conf/project_template).
+

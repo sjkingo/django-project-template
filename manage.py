@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 import os
-import sys
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
 if __name__ == '__main__':
-    if 'DJANGO_SETTINGS_MODULE' not in os.environ:
-        print('DJANGO_SETTINGS_MODULE not set, defaulting to settings.dev')
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.dev')
-
     from django.core.management import execute_from_command_line
+    import sys
     execute_from_command_line(sys.argv)

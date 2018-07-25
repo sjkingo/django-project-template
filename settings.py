@@ -1,15 +1,25 @@
 """
 Django base settings for {{ project_name }} project.
 
-Local site-specific settings can be found in settings/dev.py and
-settings/prod.py.
+Site-specific settings are read from a .env file in the same directory
+as manage.py.
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+# Set up default environment and read in settings from it.
+import environ
+env = environ.Env(
+   DEBUG=(bool, False),
+)
+environ.Env.read_env()
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Defaults to False if unset.
+DEBUG = env('DEBUG')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -59,7 +69,7 @@ STATIC_URL = '/static/'
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-# See https://docs.djangoproject.com/en/1.10/ref/settings/#file-upload-permissions
+# See https://docs.djangoproject.com/en/2.0/ref/settings/#file-upload-permissions
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -67,7 +77,7 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 # response phase the middleware will be applied in reverse order.
 #
 # See below for information on upgrading from the old-style `MIDDLEWARE_CLASSES`:
-# https://docs.djangoproject.com/en/1.10/topics/http/middleware/#upgrading-middleware
+# https://docs.djangoproject.com/en/2.0/topics/http/middleware/#upgrading-middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -122,21 +132,15 @@ LOGGING = {
     }
 }
 
-# Database settings. We define this here so it can be used for both dev and prod
-# configurations. Add HOST and PORT if the database is not local.
-# See https://docs.djangoproject.com/en/1.10/ref/settings/#databases for details.
+# Database settings via env's DATABASE_URL
+# See https://docs.djangoproject.com/en/2.0/ref/settings/#databases for details.
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-    }
+    'default': env.db(),
 }
 
 # Template settings. Define the defaults here since we will probably need to
 # add to context_processors later.
-# See https://docs.djangoproject.com/en/1.10/ref/templates/upgrading/#the-templates-settings
+# See https://docs.djangoproject.com/en/2.0/ref/templates/upgrading/#the-templates-settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -154,7 +158,7 @@ TEMPLATES = [
 ]
 
 # Password validation
-# https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -171,4 +175,20 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+SECRET_KEY = env('SECRET_KEY')
+
+# Add django-debug-toolbar
+if DEBUG:
+    INTERNAL_IPS = ['127.0.0.1']
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    DEBUG_TOOLBAR_PATCH_SETTINGS = False
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }
+
+ADMINS = [
+    # ('Your Name', 'your_email@example.com'),
 ]
