@@ -1,8 +1,9 @@
 # Sam's Django Project Template
 
-**Note:** The master branch contains a template for Django 2.0. If you wish to use a previous version, please
+**Note:** The master branch contains a template for Django 2.1. If you wish to use a previous version, please
 check out the appropriate branch:
 
+* [django-2.0 branch](https://github.com/sjkingo/django-project-template/tree/django-2.0)
 * [django-1.10 branch](https://github.com/sjkingo/django-project-template/tree/django-1.10)
 * [django-1.9 branch](https://github.com/sjkingo/django-project-template/tree/django-1.9)
 * [django-1.8 branch](https://github.com/sjkingo/django-project-template/tree/django-1.8)
@@ -23,8 +24,8 @@ This Django project template sets up a new project with the following features:
 
 ## Installation
 
-Note: This will install the latest stable version of Django (at the time of writing, 2.0.X). If this is undesirable,
-manually download [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
+Note: This will install the latest stable version of Django. If this is undesirable, manually download
+[requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
 1. Create a new virtualenv and activate it.
@@ -50,5 +51,5 @@ and edit accordingly.
         SECRET_KEY=<secret_key_here>
         DATABASE_URL=psql://<user>[:<pass>]@[<host>]/<db>
 
-It is based on the `project_template` shipped with [`stable/2.0`](https://github.com/django/django/tree/stable/2.0.x/django/conf/project_template).
+It is based on the `project_template` shipped with [`stable/2.1`](https://github.com/django/django/tree/stable/2.1.x/django/conf/project_template).
 

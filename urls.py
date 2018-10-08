@@ -2,7 +2,7 @@
 urlconf for {{ project_name }} project.
 
 For more information and examples, see 
-https://docs.djangoproject.com/en/2.0/topics/http/urls/#example
+https://docs.djangoproject.com/en/2.1/topics/http/urls/#example
 """
 
 from django.conf import settings

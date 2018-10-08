@@ -5,7 +5,7 @@ Site-specific settings are read from a .env file in the same directory
 as manage.py.
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/2.0/ref/settings/
+https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 # Set up default environment and read in settings from it.
@@ -69,7 +69,7 @@ STATIC_URL = '/static/'
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-# See https://docs.djangoproject.com/en/2.0/ref/settings/#file-upload-permissions
+# See https://docs.djangoproject.com/en/2.1/ref/settings/#file-upload-permissions
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -77,7 +77,7 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 # response phase the middleware will be applied in reverse order.
 #
 # See below for information on upgrading from the old-style `MIDDLEWARE_CLASSES`:
-# https://docs.djangoproject.com/en/2.0/topics/http/middleware/#upgrading-middleware
+# https://docs.djangoproject.com/en/2.1/topics/http/middleware/#upgrading-middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -133,14 +133,14 @@ LOGGING = {
 }
 
 # Database settings via env's DATABASE_URL
-# See https://docs.djangoproject.com/en/2.0/ref/settings/#databases for details.
+# See https://docs.djangoproject.com/en/2.1/ref/settings/#databases for details.
 DATABASES = {
     'default': env.db(),
 }
 
 # Template settings. Define the defaults here since we will probably need to
 # add to context_processors later.
-# See https://docs.djangoproject.com/en/2.0/ref/templates/upgrading/#the-templates-settings
+# See https://docs.djangoproject.com/en/2.1/ref/templates/upgrading/#the-templates-settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -158,7 +158,7 @@ TEMPLATES = [
 ]
 
 # Password validation
-# https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
