@@ -16,8 +16,8 @@ This Django project template sets up a new project with the following features:
 
 * PostgreSQL for database connections (using `pyscopg2-binary`).
 * Sensible time zone and defaults for Brisbane, Australia.
-* `django-environ` for settings with site-specific settings picked up in a `.env` file
-* Enables the [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar) app for development
+* [dj-database-url](https://github.com/kennethreitz/dj-database-url) for 12factor-inspired database URI configuration.
+* Enables [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar) for development.
 * Flat project structure (no sub-directory called `project_name`).
 * Serves static and media files when using the development server.
 * Password validation is enabled for Django's auth system.
@@ -43,13 +43,11 @@ and edit accordingly.
         $ cd $PROJECT_NAME
         $ pip freeze > requirements.txt
         $ rm -f README.md
-        $ chmod +x manage.py
 
-5. Create a `$PROJECT_NAME/.env` file in with the following:
+5. You will need to set the following environment variables:
 
-        DEBUG=True
-        SECRET_KEY=<secret_key_here>
-        DATABASE_URL=psql://<user>[:<pass>]@[<host>]/<db>
+        SECRET_KEY="<secret_key_here>"
+        DATABASE_URL=postgres://<user>[:<pass>]@[<host>]/<db>
 
 It is based on the `project_template` shipped with [`stable/2.1`](https://github.com/django/django/tree/stable/2.1.x/django/conf/project_template).
 

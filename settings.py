@@ -1,25 +1,16 @@
 """
 Django base settings for {{ project_name }} project.
 
-Site-specific settings are read from a .env file in the same directory
-as manage.py.
-
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-# Set up default environment and read in settings from it.
-import environ
-env = environ.Env(
-   DEBUG=(bool, False),
-)
-environ.Env.read_env()
-
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Defaults to False if unset.
-DEBUG = env('DEBUG')
+# Override this in a development settings module to enable.
+DEBUG = False
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -132,11 +123,14 @@ LOGGING = {
     }
 }
 
-# Database settings via env's DATABASE_URL
-# See https://docs.djangoproject.com/en/2.1/ref/settings/#databases for details.
+# Database settings via environment variable `DATABASE_URL`
+# See https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+# and https://github.com/kennethreitz/dj-database-url#url-schema for details.
+import dj_database_url
 DATABASES = {
-    'default': env.db(),
+    'default': dj_database_url.config(),
 }
+DATABASES['default']['OPTIONS'] = {'connect_timeout': 60}
 
 # Template settings. Define the defaults here since we will probably need to
 # add to context_processors later.
@@ -177,7 +171,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Add django-debug-toolbar
 if DEBUG:

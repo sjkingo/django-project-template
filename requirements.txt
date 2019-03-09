@@ -1,4 +1,4 @@
 Django>=2.1.2,<2.2
+dj-database-url
 django-debug-toolbar
-django-environ
 psycopg2-binary
