@@ -1,8 +1,9 @@
 # Sam's Django Project Template
 
-**Note:** The master branch contains a template for Django 2.1. If you wish to use a previous version, please
+**Note:** The master branch contains a template for Django 3.0. If you wish to use a previous version, please
 check out the appropriate branch:
 
+* [django-2.1 branch](https://github.com/sjkingo/django-project-template/tree/django-2.1)
 * [django-2.0 branch](https://github.com/sjkingo/django-project-template/tree/django-2.0)
 * [django-1.10 branch](https://github.com/sjkingo/django-project-template/tree/django-1.10)
 * [django-1.9 branch](https://github.com/sjkingo/django-project-template/tree/django-1.9)
@@ -21,10 +22,11 @@ This Django project template sets up a new project with the following features:
 * Flat project structure (no sub-directory called `project_name`).
 * Serves static and media files when using the development server.
 * Password validation is enabled for Django's auth system.
+* Both WSGI and ASGI applications supported.
 
 ## Installation
 
-Note: This will install the latest stable version of Django. If this is undesirable, manually download
+Note: This will install the latest version of Django. If this is undesirable, manually download
 [requirements.txt](https://raw.github.com/sjkingo/django-project-template/master/requirements.txt)
 and edit accordingly.
 
@@ -49,5 +51,5 @@ and edit accordingly.
         SECRET_KEY="<secret_key_here>"
         DATABASE_URL=postgres://<user>[:<pass>]@[<host>]/<db>
 
-It is based on the `project_template` shipped with [`stable/2.1`](https://github.com/django/django/tree/stable/2.1.x/django/conf/project_template).
+It is based on the `project_template` shipped with [`stable/3.0`](https://github.com/django/django/tree/stable/3.0.x/django/conf/project_template).
 
